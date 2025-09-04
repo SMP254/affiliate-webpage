@@ -29,6 +29,70 @@
     <p>Evergreen picks across kitchen, beauty, home, tech & lifestyle</p>
   </header>
 
+  <!-- Search Bar -->
+<div class="search-container">
+  <div class="search-wrapper">
+    <span class="search-icon">🔍</span>
+    <input type="text" id="searchBar" placeholder="Search products...">
+  </div>
+</div>
+
+<style>
+  .search-container {
+    text-align: center;
+    margin: -1.5rem auto 2rem auto;
+    position: sticky;
+    top: 0; /* stick to the very top */
+    z-index: 999;
+    background: #f4f6f8; /* same as body background to blend */
+    padding: 1rem 0;
+  }
+  .search-wrapper {
+    display: inline-flex;
+    align-items: center;
+    background: linear-gradient(135deg, #232f3e, #3b4a5a);
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+  .search-icon {
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
+    color: #fff;
+  }
+  .search-wrapper input {
+    border: none;
+    background: transparent;
+    color: #fff;
+    font-size: 1rem;
+    padding: 0.5rem;
+    width: 250px;
+    outline: none;
+  }
+  .search-wrapper input::placeholder {
+    color: #ddd;
+  }
+</style>
+
+<script>
+  // Live product search
+  document.getElementById('searchBar').addEventListener('keyup', function() {
+    let query = this.value.toLowerCase();
+    let products = document.getElementsByClassName('product');
+    
+    Array.from(products).forEach(function(product) {
+      let title = product.querySelector('h2').innerText.toLowerCase();
+      let description = product.querySelector('p').innerText.toLowerCase();
+      
+      if (title.includes(query) || description.includes(query)) {
+        product.style.display = "block";
+      } else {
+        product.style.display = "none";
+      }
+    });
+  });
+</script>
+
   <div class="container">
     <div class="grid">
 
