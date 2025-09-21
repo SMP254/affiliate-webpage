@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FindsHub Blog</title>
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+    .blog-header {
+      text-align: center;
+      padding: 60px 20px;
+      background: linear-gradient(135deg, #0077cc, #00aaff);
+      color: #fff;
+    }
+    .blog-header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    .blog-container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+    .blog-card {
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      transition: transform 0.2s ease;
+    }
+    .blog-card:hover {
+      transform: translateY(-5px);
+    }
+    .blog-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .blog-card-content {
+      padding: 20px;
+    }
+    .blog-card h2 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      color: #222;
+    }
+    .blog-card p {
+      font-size: 0.95rem;
+      color: #555;
+      margin-bottom: 15px;
+    }
+    .blog-card a {
+      text-decoration: none;
+      color: #0077cc;
+      font-weight: bold;
+    }
+    .blog-card a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header class="blog-header">
+    <h1>FindsHub Blog</h1>
+    <p>Trends, reviews, and tips on top Amazon finds</p>
+  </header>
+
+  <main class="blog-container">
+    <!-- Blog Post 1 -->
+    <article class="blog-card">
+      <img src="https://m.media-amazon.com/images/I/71Jp5gB9ATL._AC_SX679_.jpg" alt="Kitchen Essentials">
+      <div class="blog-card-content">
+        <h2>Top 10 Must-Have Kitchen Essentials</h2>
+        <p>Discover the tools every modern kitchen needs to make cooking easier and more enjoyable.</p>
+        <a href="blog-post1.html">Read More →</a>
+      </div>
+    </article>
+
+    <!-- Blog Post 2 -->
+    <article class="blog-card">
+      <img src="https://m.media-amazon.com/images/I/81vpsIs58WL._AC_SX679_.jpg" alt="Smart Home Gadgets">
+      <div class="blog-card-content">
+        <h2>5 Smart Home Gadgets You’ll Actually Use</h2>
+        <p>Not all smart gadgets are gimmicks. Here are 5 that truly make life easier.</p>
+        <a href="blog-post2.html">Read More →</a>
+      </div>
+    </article>
+
+    <!-- Blog Post 3 -->
+    <article class="blog-card">
+      <img src="https://m.media-amazon.com/images/I/71TQGR2gTzL._AC_SX679_.jpg" alt="Fitness Gear">
+      <div class="blog-card-content">
+        <h2>Best Fitness Gear for 2025</h2>
+        <p>Stay fit and healthy with these trending fitness essentials that are worth the hype.</p>
+        <a href="blog-post3.html">Read More →</a>
+      </div>
+    </article>
+  </main>
+</body>
+</html>
