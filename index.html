@@ -1,39 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-729VT0DET2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Google tag -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-729VT0DET2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-729VT0DET2');
+  </script>
 
-  gtag('config', 'G-729VT0DET2');
-</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FindsHub - Amazon Finds You’ll Love ✨</title>
   <link rel="icon" type="image/png" href="favicon.ico.png">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
   <style>
-
-    <script>
-  const menuToggle = document.getElementById("menu-toggle");
-  const navLinks = document.getElementById("nav-links");
-
-  menuToggle.addEventListener("click", () => {
-    navLinks.classList.toggle("show");
-  });
-</script>
-
     body { font-family: 'Inter', sans-serif; background: #f4f6f8; margin: 0; color: #333; }
 
-    /* Hero Section */
+    /* Navigation */
+    nav {
+      background: #232f3e;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      width: 100%;
+    }
+    .nav-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+    }
+    nav .logo a { color: #ff9900; font-size: 1.5rem; font-weight: 700; text-decoration: none; }
+    nav ul { list-style: none; display: flex; gap: 1.5rem; margin: 0; padding: 0; }
+    nav ul li a { color: #fff; text-decoration: none; font-weight: 500; transition: color 0.3s; }
+    nav ul li a:hover { color: #ff9900; }
+
+    /* Hero */
     .hero {
       height: 100vh;
-      background: 
-        linear-gradient(135deg, rgba(35,47,62,0.75), rgba(59,74,90,0.75)), 
-        url('https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1950&q=80') no-repeat center center;
+      background: linear-gradient(135deg, rgba(35,47,62,0.75), rgba(59,74,90,0.75)),
+                  url('https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1950&q=80') no-repeat center center;
       background-size: cover;
       color: #fff;
       display: flex;
@@ -42,17 +53,15 @@
       text-align: center;
       padding: 2rem;
     }
-
     .hero-content h1 { font-size: 3rem; margin-bottom: 1rem; }
     .hero-content p { font-size: 1.3rem; margin-bottom: 2rem; }
-
     .cta-buttons { display: flex; gap: 1rem; justify-content: center; }
     .cta-btn {
       padding: 0.8rem 1.5rem;
       border-radius: 8px;
       font-weight: 600;
       text-decoration: none;
-      transition: background 0.3s ease;
+      transition: background 0.3s;
     }
     .cta-btn.primary { background: #ff9900; color: #fff; }
     .cta-btn.primary:hover { background: #e68a00; }
@@ -65,12 +74,11 @@
     .fade-in.delay-2 { animation-delay: 0.6s; }
     @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
 
-    /* Search bar */
+    /* Search */
     .search-container {
       text-align: center;
-      margin: -1.5rem auto 2rem auto;
       position: sticky;
-      top: 0;
+      top: 60px;
       z-index: 999;
       background: #f4f6f8;
       padding: 1rem 0;
@@ -130,85 +138,38 @@
       background: #f0f2f5;
       margin-top: 3rem;
     }
-    <nav>
-  <div class="nav-container">
-    <h2 class="logo"><a href="index.html">FindsHub</a></h2>
-
-    <!-- Hamburger Icon -->
-    <div class="menu-toggle" id="menu-toggle">☰</div>
-
-    <ul id="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="products.html">Products</a></li>
-      <li><a href="blog/index.html">Blog</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </div>
-</nav>
-
-    /* Navigation Bar */
-nav {
-  background: #232f3e; /* Amazon-like dark navy */
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  width: 100%;
-}
-
-.nav-container {
-  max-width: 1100px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-}
-
-nav .logo a {
-  color: #ff9900; /* orange accent */
-  font-size: 1.5rem;
-  font-weight: 700;
-  text-decoration: none;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
-  margin: 0;
-  padding: 0;
-}
-
-nav ul li a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-nav ul li a:hover {
-  color: #ff9900; /* orange hover effect */
-}
-
+    footer a { color: #232f3e; text-decoration: none; margin: 0 0.5rem; }
+    footer a:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
 
-  <!-- Hero Section -->
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container">
+      <h2 class="logo"><a href="index.html">FindsHub</a></h2>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="blog/index.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
   <header class="hero">
     <div class="hero-content">
       <h1 class="fade-in">Amazon Finds You’ll Love ✨</h1>
       <p class="fade-in delay-1">Evergreen picks across kitchen, beauty, home, tech & lifestyle</p>
       <div class="cta-buttons fade-in delay-2">
-        <li><a href="blog/index.html">Blog</a></li>
         <a href="#products" class="cta-btn primary">Shop the Finds</a>
         <a href="https://www.tiktok.com/@findshub.online" target="_blank" class="cta-btn secondary">Follow on TikTok 🎥</a>
-      
       </div>
     </div>
   </header>
 
-  <!-- Search Bar -->
+  <!-- Search -->
   <div class="search-container">
     <div class="search-wrapper">
       <span class="search-icon">🔍</span>
@@ -219,8 +180,8 @@ nav ul li a:hover {
   <!-- Product Grid -->
   <div id="products" class="container">
     <div class="grid">
-
-<!-- Product 1 (unchanged) -->
+      
+      <!-- Product 1 (unchanged) -->
       <div class="product">
         <img src="https://m.media-amazon.com/images/I/81AXvY2L6TL._SX522_.jpg" alt="Kitchen Scale" />
         <div class="product-content">
@@ -500,52 +461,45 @@ nav ul li a:hover {
     <a href="https://amzn.to/47SoJQp" class="btn" target="_blank" rel="noopener">See Details</a>
   </div>
 </div>
-
+      
     </div>
   </div>
 
+  <!-- Footer -->
   <footer>
     <p>As an Amazon Associate, I earn from qualifying purchases. Thank you!</p>
-     <p>
-    <a href="/about.html">About</a> •
-    <a href="/privacy.html">Privacy</a> •
-    <a href="/terms.html">Terms</a> •
-    <a href="/contact.html">Contact</a>
-    <li><a href="blog/index.html">Blog</a></li>
-  </p>
+    <p>
+      <a href="/about.html">About</a> •
+      <a href="/privacy.html">Privacy</a> •
+      <a href="/terms.html">Terms</a> •
+      <a href="/contact.html">Contact</a> •
+      <a href="/blog/index.html">Blog</a>
+    </p>
   </footer>
 
+  <!-- Scripts -->
   <script>
-    // Live product search
+    // Live search
     document.getElementById('searchBar').addEventListener('keyup', function() {
       let query = this.value.toLowerCase();
-      let products = document.getElementsByClassName('product');
-      
-      Array.from(products).forEach(function(product) {
+      document.querySelectorAll('.product').forEach(product => {
         let title = product.querySelector('h2').innerText.toLowerCase();
         let description = product.querySelector('p').innerText.toLowerCase();
-        
-        if (title.includes(query) || description.includes(query)) {
-          product.style.display = "block";
-        } else {
-          product.style.display = "none";
-        }
+        product.style.display = (title.includes(query) || description.includes(query)) ? "block" : "none";
       });
     });
-  </script>
 
-  <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    document.querySelectorAll('a.btn').forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        gtag('event', 'affiliate_click', {
-          'event_category': 'Amazon',
-          'event_label': this.href
+    // Affiliate click tracking
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('a.btn').forEach(btn => {
+        btn.addEventListener('click', function () {
+          gtag('event', 'affiliate_click', {
+            'event_category': 'Amazon',
+            'event_label': this.href
+          });
         });
       });
     });
-  });
-</script>
-
+  </script>
 </body>
 </html>
