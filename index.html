@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google tag -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-729VT0DET2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-729VT0DET2');
+  </script>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FindsHub - Amazon Finds You’ll Love ✨</title>
@@ -8,74 +17,211 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
-    body { font-family: 'Inter', sans-serif; margin:0; background:#f4f6f8; color:#333; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f4f6f8;
+      margin: 0;
+      color: #333;
+    }
 
+    /* Navbar */
     nav {
-      background:#232f3e; position:sticky; top:0; z-index:1000;
+      background: #232f3e;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      width: 100%;
     }
     .nav-container {
-      max-width:1100px; margin:0 auto; padding:1rem;
-      display:flex; justify-content:space-between; align-items:center;
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
     }
-    nav .logo a { color:#ff9900; font-size:1.5rem; font-weight:700; text-decoration:none; }
-    nav ul { display:flex; gap:1.2rem; list-style:none; margin:0; padding:0; }
-    nav ul li a { color:#fff; text-decoration:none; font-weight:500; }
-    nav ul li a:hover { color:#ff9900; }
+    nav .logo a {
+      color: #ff9900;
+      font-size: 1.5rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.2rem;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    nav ul li a:hover { color: #ff9900; }
 
+    /* Hero */
     .hero {
-      height:100vh;
-      background:linear-gradient(135deg, rgba(35,47,62,0.75), rgba(59,74,90,0.75)),
+      height: 100vh;
+      background: 
+        linear-gradient(135deg, rgba(35,47,62,0.75), rgba(59,74,90,0.75)), 
         url('https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1950&q=80') no-repeat center center;
-      background-size:cover; color:#fff;
-      display:flex; flex-direction:column; justify-content:center; align-items:center;
-      text-align:center; padding:2rem;
+      background-size: cover;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
     }
-    .hero h1 { font-size:2.2rem; margin-bottom:1rem; }
-    .hero p { font-size:1.1rem; margin-bottom:1.5rem; }
-    .cta-buttons { display:flex; gap:1rem; flex-wrap:wrap; justify-content:center; }
+    .hero-content h1 { font-size: 2.2rem; margin-bottom: 1rem; }
+    .hero-content p { font-size: 1.1rem; margin-bottom: 1.5rem; }
+    .cta-buttons { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
     .cta-btn {
-      padding:0.8rem 1.2rem; border-radius:8px; font-weight:600;
-      text-decoration:none; transition:background 0.3s ease;
+      padding: 0.8rem 1.2rem;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.3s ease;
     }
-    .cta-btn.primary { background:#ff9900; color:#fff; }
-    .cta-btn.primary:hover { background:#e68a00; }
-    .cta-btn.secondary { background:#fff; color:#232f3e; }
-    .cta-btn.secondary:hover { background:#f4f6f8; }
+    .cta-btn.primary { background: #ff9900; color: #fff; }
+    .cta-btn.primary:hover { background: #e68a00; }
+    .cta-btn.secondary { background: #fff; color: #232f3e; }
+    .cta-btn.secondary:hover { background: #f4f6f8; }
 
+    /* Search */
+    .search-container {
+      position: sticky;
+      top: 60px; /* sits just below navbar */
+      z-index: 999;
+      background: #f4f6f8;
+      padding: 0.8rem;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    .search-wrapper {
+      display: inline-flex;
+      align-items: center;
+      background: linear-gradient(135deg, #232f3e, #3b4a5a);
+      padding: 0.5rem 1rem;
+      border-radius: 25px;
+      width: 100%;
+      max-width: 400px;
+    }
+    .search-icon { margin-right: 0.5rem; font-size: 1.2rem; color: #fff; }
+    .search-wrapper input {
+      border: none;
+      background: transparent;
+      color: #fff;
+      font-size: 1rem;
+      padding: 0.5rem;
+      flex: 1;
+      outline: none;
+    }
+    .search-wrapper input::placeholder { color: #ddd; }
+
+    /* Products */
+    .container { max-width: 1100px; margin: 2rem auto; padding: 0 1rem; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+    .product {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      overflow: hidden;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .product:hover { transform: translateY(-5px); }
+    .product img { width: 100%; display: block; }
+    .product-content { padding: 1rem; }
+    .product h2 { margin: 0; font-size: 1.1rem; font-weight: 600; }
+    .product p { font-size: 0.9rem; color: #555; margin: 0.5rem 0 1rem; }
+    .btn {
+      display: inline-block;
+      padding: 0.6rem 1rem;
+      background: #ff9900;
+      color: #fff;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .btn:hover { background: #e68a00; }
+
+    /* Footer */
     footer {
-      text-align:center; padding:2rem 1rem; font-size:0.9rem; color:#777; background:#f0f2f5;
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+      color: #777;
+      background: #f0f2f5;
+      margin-top: 3rem;
     }
 
-    @media (max-width:600px) {
-      .hero { height:auto; padding:4rem 1rem; }
-      .hero h1 { font-size:1.8rem; }
-      .hero p { font-size:1rem; }
-      nav ul { display:none; }
+    /* Mobile */
+    @media (max-width: 600px) {
+      .hero { height: auto; padding: 4rem 1rem; }
+      .hero-content h1 { font-size: 1.8rem; }
+      .hero-content p { font-size: 1rem; }
+      nav ul { display: none; } /* Hide links on mobile for now */
     }
   </style>
 </head>
 <body>
+
+  <!-- Navbar -->
   <nav>
     <div class="nav-container">
       <h2 class="logo"><a href="index.html">FindsHub</a></h2>
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="products.html">Products</a></li>
+        <li><a href="#products">Products</a></li> <!-- fixed link -->
         <li><a href="blog/index.html">Blog</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
   </nav>
 
+  <!-- Hero -->
   <header class="hero">
-    <h1>Amazon Finds You’ll Love ✨</h1>
-    <p>Evergreen picks across kitchen, beauty, home, tech & lifestyle</p>
-    <div class="cta-buttons">
-      <a href="products.html" class="cta-btn primary">Shop the Finds</a>
-      <a href="https://www.tiktok.com/@findshub.online" target="_blank" class="cta-btn secondary">Follow on TikTok 🎥</a>
+    <div class="hero-content">
+      <h1>Amazon Finds You’ll Love ✨</h1>
+      <p>Evergreen picks across kitchen, beauty, home, tech & lifestyle</p>
+      <div class="cta-buttons">
+        <a href="#products" class="cta-btn primary">Shop the Finds</a>
+        <a href="https://www.tiktok.com/@findshub.online" target="_blank" class="cta-btn secondary">Follow on TikTok 🎥</a>
+      </div>
     </div>
   </header>
 
+  <!-- Search -->
+  <div class="search-container">
+    <div class="search-wrapper">
+      <span class="search-icon">🔍</span>
+      <input type="text" id="searchBar" placeholder="Search products...">
+    </div>
+  </div>
+
+  <!-- Product Grid -->
+  <div id="products" class="container">
+    <div class="grid">
+      <!-- Example Product -->
+      <div class="product">
+        <img src="https://m.media-amazon.com/images/I/81AXvY2L6TL._SX522_.jpg" alt="Kitchen Scale" />
+        <div class="product-content">
+          <h2>Tiny Scale, Huge Accuracy ⚡</h2>
+          <p>Perfect for meal prep, baking, and portion control. Compact & easy to use!</p>
+          <a href="https://amzn.to/426vQRp" class="btn" target="_blank">View on Amazon</a>
+        </div>
+      </div>
+      <!-- Add more products here -->
+    </div>
+  </div>
+
+  <!-- Footer -->
   <footer>
     <p>As an Amazon Associate, I earn from qualifying purchases. Thank you!</p>
     <p>
@@ -85,5 +231,18 @@
       <a href="/contact.html">Contact</a>
     </p>
   </footer>
+
+  <!-- Search Script -->
+  <script>
+    document.getElementById('searchBar').addEventListener('keyup', function() {
+      let query = this.value.toLowerCase();
+      let products = document.getElementsByClassName('product');
+      Array.from(products).forEach(function(product) {
+        let title = product.querySelector('h2').innerText.toLowerCase();
+        let description = product.querySelector('p').innerText.toLowerCase();
+        product.style.display = (title.includes(query) || description.includes(query)) ? "block" : "none";
+      });
+    });
+  </script>
 </body>
 </html>
