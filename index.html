@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-729VT0DET2"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-729VT0DET2');
-  </script>
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FindsHub - Amazon Finds You’ll Love ✨</title>
@@ -17,134 +8,53 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
-    body { font-family: 'Inter', sans-serif; background: #f4f6f8; margin: 0; color: #333; }
+    body { font-family: 'Inter', sans-serif; margin:0; background:#f4f6f8; color:#333; }
 
-    /* Navigation */
     nav {
-      background: #232f3e;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      width: 100%;
+      background:#232f3e; position:sticky; top:0; z-index:1000;
     }
     .nav-container {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem;
+      max-width:1100px; margin:0 auto; padding:1rem;
+      display:flex; justify-content:space-between; align-items:center;
     }
-    nav .logo a { color: #ff9900; font-size: 1.5rem; font-weight: 700; text-decoration: none; }
-    nav ul { list-style: none; display: flex; gap: 1.5rem; margin: 0; padding: 0; }
-    nav ul li a { color: #fff; text-decoration: none; font-weight: 500; transition: color 0.3s; }
-    nav ul li a:hover { color: #ff9900; }
+    nav .logo a { color:#ff9900; font-size:1.5rem; font-weight:700; text-decoration:none; }
+    nav ul { display:flex; gap:1.2rem; list-style:none; margin:0; padding:0; }
+    nav ul li a { color:#fff; text-decoration:none; font-weight:500; }
+    nav ul li a:hover { color:#ff9900; }
 
-    /* Hero */
     .hero {
-      height: 100vh;
-      background: linear-gradient(135deg, rgba(35,47,62,0.75), rgba(59,74,90,0.75)),
-                  url('https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1950&q=80') no-repeat center center;
-      background-size: cover;
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 2rem;
+      height:100vh;
+      background:linear-gradient(135deg, rgba(35,47,62,0.75), rgba(59,74,90,0.75)),
+        url('https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1950&q=80') no-repeat center center;
+      background-size:cover; color:#fff;
+      display:flex; flex-direction:column; justify-content:center; align-items:center;
+      text-align:center; padding:2rem;
     }
-    .hero-content h1 { font-size: 3rem; margin-bottom: 1rem; }
-    .hero-content p { font-size: 1.3rem; margin-bottom: 2rem; }
-    .cta-buttons { display: flex; gap: 1rem; justify-content: center; }
+    .hero h1 { font-size:2.2rem; margin-bottom:1rem; }
+    .hero p { font-size:1.1rem; margin-bottom:1.5rem; }
+    .cta-buttons { display:flex; gap:1rem; flex-wrap:wrap; justify-content:center; }
     .cta-btn {
-      padding: 0.8rem 1.5rem;
-      border-radius: 8px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: background 0.3s;
+      padding:0.8rem 1.2rem; border-radius:8px; font-weight:600;
+      text-decoration:none; transition:background 0.3s ease;
     }
-    .cta-btn.primary { background: #ff9900; color: #fff; }
-    .cta-btn.primary:hover { background: #e68a00; }
-    .cta-btn.secondary { background: #fff; color: #232f3e; }
-    .cta-btn.secondary:hover { background: #f4f6f8; }
-
-    /* Animation */
-    .fade-in { opacity: 0; transform: translateY(20px); animation: fadeInUp 1s forwards; }
-    .fade-in.delay-1 { animation-delay: 0.3s; }
-    .fade-in.delay-2 { animation-delay: 0.6s; }
-    @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
-
-    /* Search */
-    .search-container {
-      text-align: center;
-      position: sticky;
-      top: 60px;
-      z-index: 999;
-      background: #f4f6f8;
-      padding: 1rem 0;
-    }
-    .search-wrapper {
-      display: inline-flex;
-      align-items: center;
-      background: linear-gradient(135deg, #232f3e, #3b4a5a);
-      padding: 0.5rem 1rem;
-      border-radius: 25px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-    .search-icon { margin-right: 0.5rem; font-size: 1.2rem; color: #fff; }
-    .search-wrapper input {
-      border: none;
-      background: transparent;
-      color: #fff;
-      font-size: 1rem;
-      padding: 0.5rem;
-      width: 250px;
-      outline: none;
-    }
-    .search-wrapper input::placeholder { color: #ddd; }
-
-    /* Products */
-    .container { max-width: 1100px; margin: 2rem auto; padding: 0 1rem; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
-    .product {
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      overflow: hidden;
-      transition: transform .2s, box-shadow .2s;
-    }
-    .product:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
-    .product img { width: 100%; display: block; }
-    .product-content { padding: 1rem; }
-    .product h2 { margin: 0; font-size: 1.2rem; font-weight: 600; }
-    .product p { font-size: 0.95rem; color: #555; margin: 0.5rem 0 1rem; }
-    .btn {
-      display: inline-block;
-      padding: 0.7rem 1.2rem;
-      background: #ff9900;
-      color: #fff;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: background .2s;
-    }
-    .btn:hover { background: #e68a00; }
+    .cta-btn.primary { background:#ff9900; color:#fff; }
+    .cta-btn.primary:hover { background:#e68a00; }
+    .cta-btn.secondary { background:#fff; color:#232f3e; }
+    .cta-btn.secondary:hover { background:#f4f6f8; }
 
     footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      font-size: 0.9rem;
-      color: #777;
-      background: #f0f2f5;
-      margin-top: 3rem;
+      text-align:center; padding:2rem 1rem; font-size:0.9rem; color:#777; background:#f0f2f5;
     }
-    footer a { color: #232f3e; text-decoration: none; margin: 0 0.5rem; }
-    footer a:hover { text-decoration: underline; }
+
+    @media (max-width:600px) {
+      .hero { height:auto; padding:4rem 1rem; }
+      .hero h1 { font-size:1.8rem; }
+      .hero p { font-size:1rem; }
+      nav ul { display:none; }
+    }
   </style>
 </head>
 <body>
-
-  <!-- Navigation -->
   <nav>
     <div class="nav-container">
       <h2 class="logo"><a href="index.html">FindsHub</a></h2>
@@ -157,349 +67,23 @@
     </div>
   </nav>
 
-  <!-- Hero -->
   <header class="hero">
-    <div class="hero-content">
-      <h1 class="fade-in">Amazon Finds You’ll Love ✨</h1>
-      <p class="fade-in delay-1">Evergreen picks across kitchen, beauty, home, tech & lifestyle</p>
-      <div class="cta-buttons fade-in delay-2">
-        <a href="#products" class="cta-btn primary">Shop the Finds</a>
-        <a href="https://www.tiktok.com/@findshub.online" target="_blank" class="cta-btn secondary">Follow on TikTok 🎥</a>
-      </div>
+    <h1>Amazon Finds You’ll Love ✨</h1>
+    <p>Evergreen picks across kitchen, beauty, home, tech & lifestyle</p>
+    <div class="cta-buttons">
+      <a href="products.html" class="cta-btn primary">Shop the Finds</a>
+      <a href="https://www.tiktok.com/@findshub.online" target="_blank" class="cta-btn secondary">Follow on TikTok 🎥</a>
     </div>
   </header>
 
-  <!-- Search -->
-  <div class="search-container">
-    <div class="search-wrapper">
-      <span class="search-icon">🔍</span>
-      <input type="text" id="searchBar" placeholder="Search products...">
-    </div>
-  </div>
-
-  <!-- Product Grid -->
-  <div id="products" class="container">
-    <div class="grid">
-      
-      <!-- Product 1 (unchanged) -->
-      <div class="product">
-        <img src="https://m.media-amazon.com/images/I/81AXvY2L6TL._SX522_.jpg" alt="Kitchen Scale" />
-        <div class="product-content">
-          <h2>Tiny Scale, Huge Accuracy ⚡</h2>
-          <p>Perfect for meal prep, baking, and portion control. Compact & easy to use!</p>
-          <a href="https://amzn.to/426vQRp" class="btn" target="_blank">View on Amazon</a>
-        </div>
-      </div>
-
-      <!-- Product 2 (unchanged) -->
-      <div class="product">
-        <img src="https://m.media-amazon.com/images/I/81+QSE79UbL._AC_SX679_.jpg" alt="Glass Food Storage" />
-        <div class="product-content">
-          <h2>FreshLock Glass Meal Prep Set 🍱</h2>
-          <p>Keep meals fresh 2x longer—microwave safe, airtight, and durable.</p>
-          <a href="https://amzn.to/4n50y5I" class="btn" target="_blank">Shop Now</a>
-        </div>
-      </div>
-
-      <!-- Product 3 (unchanged) -->
-      <div class="product">
-        <img src="https://m.media-amazon.com/images/I/71ejw74+vzL._AC_SX679_.jpg" alt="Scrub Sponge" />
-        <div class="product-content">
-          <h2>The Viral Happy Sponge 😍</h2>
-          <p>Cleans like magic, lasts longer, and makes scrubbing actually fun.</p>
-          <a href="https://amzn.to/3HUdFb2" class="btn" target="_blank">Grab Yours</a>
-        </div>
-      </div>
-
-      <!-- Product 4: Milk Frother -->
-      <div class="product">
-        <img src="https://m.media-amazon.com/images/I/811-tPSBMML._AC_SX679_.jpg" alt="Electric Milk Frother" />
-        <div class="product-content">
-          <h2>Barista-Style Milk Frother ☕</h2>
-          <p>Turn your coffee into a café drink in seconds. TikTok coffee lovers swear by this!</p>
-          <a href="https://amzn.to/45LdurD" class="btn" target="_blank">Brew Better</a>
-        </div>
-      </div>
-
-      <!-- Product 5: LED Strip Lights -->
-      <div class="product">
-        <img src="https://m.media-amazon.com/images/I/71yZzKRZahL._AC_SX679_.jpg" alt="LED Strip Lights" />
-        <div class="product-content">
-          <h2>VibeCheck LED Strips 🌈</h2>
-          <p>Transform your room with mood lighting — perfect for videos and gaming setups.</p>
-          <a href="https://amzn.to/41uWL9y" class="btn" target="_blank">Light It Up</a>
-        </div>
-      </div>
-
-      <!-- Product 6: Portable Blender -->
-      <div class="product">
-        <img src="https://m.media-amazon.com/images/I/615oOUt8wGL._AC_SX679_.jpg" alt="Portable Blender" />
-        <div class="product-content">
-          <h2>Mini Smoothie Blender 🥤</h2>
-          <p>Make smoothies anywhere — USB rechargeable, compact and easy to clean.</p>
-          <a href="https://amzn.to/4p6g3Mn" class="btn" target="_blank">Blend On The Go</a>
-        </div>
-      </div>
-
-      <!-- Product 7: Gua Sha -->
-      <div class="product">
-        <img src="https://m.media-amazon.com/images/I/71IqCJkSASL._AC_SX679_.jpg" alt="Gua Sha" />
-        <div class="product-content">
-          <h2>Glow-Up Gua Sha Tool ✨</h2>
-          <p>Sculpt your face, boost circulation, and get that natural glow.</p>
-          <a href="https://amzn.to/47pXiNK" class="btn" target="_blank">Shop Glow</a>
-        </div>
-      </div>
-
-      <!-- Product 8: Large Water Bottle -->
-      <div class="product">
-        <img src="https://m.media-amazon.com/images/I/7109JlXhb0L._AC_SY300_SX300_QL70_FMwebp_.jpg" alt="Large Water Bottle" />
-        <div class="product-content">
-          <h2>Hydration Motivation 💧</h2>
-          <p>Big bottle with time markers — stay hydrated all day and hit your goals.</p>
-          <a href="https://amzn.to/4m0dWXT" class="btn" target="_blank">Stay Hydrated</a>
-        </div>
-      </div>
-
-      <!-- Product 9: Wireless Earbuds -->
-      <div class="product">
-        <img src="https://m.media-amazon.com/images/I/71KbHjg4PPL._AC_SY300_SX300_QL70_FMwebp_.jpg" alt="Wireless Earbuds" />
-        <div class="product-content">
-          <h2>SnugFit Wireless Earbuds 🎧</h2>
-          <p>Comfortable, great sound, and long battery life — perfect for workouts & commuting.</p>
-          <a href="https://amzn.to/4g5LvpT" class="btn" target="_blank">Hear The Difference</a>
-        </div>
-      </div>
-
-      <!-- Product 10: Smart Plug -->
-      <div class="product">
-        <img src="https://m.media-amazon.com/images/I/711nxnsm6nL._AC_SY450_.jpg" alt="Smart Plug" />
-        <div class="product-content">
-          <h2>Smart Home Starter 🔌</h2>
-          <p>Control lights & small appliances from your phone — Alexa/Google compatible.</p>
-          <a href="https://amzn.to/4lV6Cg4" class="btn" target="_blank">Control It</a>
-        </div>
-      </div>
-
-      <!-- Product 11: Desk Organizer -->
-      <div class="product">
-        <img src="https://m.media-amazon.com/images/I/81j5svSdfQL._AC_SY300_SX300_QL70_FMwebp_.jpg" alt="Desk Organizer" />
-        <div class="product-content">
-          <h2>Aesthetic Desk Organizer 🖤</h2>
-          <p>Keep your workspace clean and photo-ready — perfect for creators & home offices.</p>
-          <a href="https://amzn.to/463LtKU" class="btn" target="_blank">Get Organized</a>
-        </div>
-      </div>
-
-      <!-- Product 12: Ring Light -->
-      <div class="product">
-        <img src="https://m.media-amazon.com/images/I/61tKCv30rNL._AC_SY300_SX300_QL70_ML2_.jpg" alt="Ring Light" />
-        <div class="product-content">
-          <h2>Creator Ring Light 💡</h2>
-          <p>Perfect for TikToks, selfies, and video calls — adjustable brightness & color temps.</p>
-          <a href="https://amzn.to/4nhtDLn" class="btn" target="_blank">Light It Up</a>
-        </div>
-      </div>
-
-      <!-- Product 13: Dog Treats -->
-      <div class="product">
-        <img src="https://m.media-amazon.com/images/I/71j6hh+n3NL._AC_SX679_.jpg" alt="Dog Treats" />
-        <div class="product-content">
-          <h2>Pup’s Favorite Treats 🐶</h2>
-          <p>Healthy and tasty dental treats — great for training and fresh breath.</p>
-          <a href="https://amzn.to/3HQuRy7" class="btn" target="_blank">Treat Your Pup</a>
-        </div>
-      </div>
-
-      <!-- Product 14: Clay Face Mask -->
-      <div class="product">
-        <img src="https://m.media-amazon.com/images/I/41Y80h4d9+L._SY300_SX300_QL70_FMwebp_.jpg" alt="Clay Face Mask" />
-        <div class="product-content">
-          <h2>Self-Care Clay Mask 🧖‍♀️</h2>
-          <p>Detox, refresh, and glow — a regular self-care essential.</p>
-          <a href="https://amzn.to/46ihb8h" class="btn" target="_blank">Shop Glow</a>
-        </div>
-      </div>
-
-      <!-- Product 15: Mini Tripod -->
-      <div class="product">
-        <img src="https://m.media-amazon.com/images/I/61LnPbT7KML._AC_SY300_SX300_QL70_FMwebp_.jpg" alt="Mini Tripod" />
-        <div class="product-content">
-          <h2>Creator’s Mini Tripod 📱</h2>
-          <p>Lightweight, sturdy, and perfect for shooting hands-free TikToks anywhere.</p>
-          <a href="https://amzn.to/3HY4TJ0" class="btn" target="_blank">Film Like a Pro</a>
-        </div>
-      </div>
-
-      <!-- Product 16 -->
-<div class="product">
-  <img src="https://m.media-amazon.com/images/I/71Xa0fzUiGL._AC_SX342_SY445_QL70_FMwebp_.jpg" alt="LED Desk Lamp" />
-  <div class="product-content">
-    <h2>LED Desk Lamp</h2>
-    <p>Eye-friendly lighting with adjustable brightness and USB charging port. Perfect for study or work.</p>
-    <a href="https://amzn.to/46jRzrC" class="btn" target="_blank">See Details</a>
-  </div>
-</div>
-
-      <!-- Product: Cold Press Juicer -->
-<div class="product">
-  <img 
-    src="https://m.media-amazon.com/images/I/71NmUUKiDvL._AC_SX679_.jpg" 
-    alt="Cold Press Juicer Machine" 
-    loading="lazy" 
-    decoding="async"
-  />
-  <div class="product-content">
-    <h2>Cold Press Juicer 🥤</h2>
-    <p>Extra-wide self-feeding chute, triple strainers, and high juice yield. 
-       Make fresh, healthy juice with less prep and easy cleaning.</p>
-    <a href="https://amzn.to/4gbhi99" class="btn" target="_blank" rel="noopener">View on Amazon</a>
-  </div>
-</div>
-
-      <!-- Product: MagSafe Wallet Card Stand Holder -->
-<div class="product">
-  <img 
-    src="https://m.media-amazon.com/images/I/71KuGdFHbNL._AC_SX679_.jpg" 
-    alt="MagSafe Wallet Card Stand Holder" 
-    loading="lazy" 
-    decoding="async"
-  />
-  <div class="product-content">
-    <h2>MagSafe Wallet Stand 💳</h2>
-    <p>Slim magnetic wallet that snaps to your phone, holds cards, and doubles as a stand.</p>
-    <a href="https://amzn.to/3VkjiT3" class="btn" target="_blank" rel="noopener">View on Amazon</a>
-  </div>
-</div>
-
-      <!-- Product: Mini Bluetooth Speaker -->
-<div class="product">
-  <img 
-    src="https://m.media-amazon.com/images/I/61FbWdgk2kL._AC_SX679_.jpg" 
-    alt="Mini Bluetooth Speaker" 
-    loading="lazy" 
-    decoding="async"
-  />
-  <div class="product-content">
-    <h2>Mini Bluetooth Speaker 🔊</h2>
-    <p>Compact design with powerful bass, waterproof, and perfect for shower, bike, or travel.</p>
-    <a href="https://amzn.to/4nfZex0" class="btn" target="_blank" rel="noopener">View on Amazon</a>
-  </div>
-</div>
-
-      <!-- Product: AirTag Keychain Holder -->
-<div class="product">
-  <img 
-    src="https://m.media-amazon.com/images/I/71efrWxE-JL._AC_SX679_.jpg" 
-    alt="AirTag Keychain Holder" 
-    loading="lazy" 
-    decoding="async"
-  />
-  <div class="product-content">
-    <h2>AirTag Keychain Holder 🔑</h2>
-    <p>Keep your keys organized and your AirTag protected. Slim design fits up to 5 keys.</p>
-    <a href="https://amzn.to/4p2I2gd" class="btn" target="_blank" rel="noopener">View on Amazon</a>
-  </div>
-</div>
-
-      <!-- Product: Insulated Water Bottle -->
-<div class="product">
-  <img 
-    src="https://m.media-amazon.com/images/I/61VKFFCXy9L._AC_SX679_.jpg" 
-    alt="Insulated Water Bottle" 
-    loading="lazy" 
-    decoding="async"
-  />
-  <div class="product-content">
-    <h2>Insulated Free-Flow Bottle 💧</h2>
-    <p>Stay hydrated anywhere with a sleek, leak-proof design. Perfect for gym, office, or outdoor adventures.</p>
-    <a href="https://amzn.to/4665Qqv" class="btn" target="_blank" rel="noopener">View on Amazon</a>
-  </div>
-</div>
-
-<!-- Product: Casual Jogger Pants -->
-<div class="product">
-  <img 
-    src="https://m.media-amazon.com/images/I/71qamorp2HL._AC_SY550_.jpg" 
-    alt="Casual Jogger Pants" 
-    loading="lazy" 
-    decoding="async"
-  />
-  <div class="product-content">
-    <h2>Comfy Everyday Joggers </h2>
-    <p>Soft, versatile sweatpants that work for lounging, running errands, or casual outings.</p>
-    <a href="https://amzn.to/4nmxhDL" class="btn" target="_blank" rel="noopener">Check Price</a>
-  </div>
-</div>
-
-<!-- Product: Cordless Stick Vacuum -->
-<div class="product">
-  <img 
-    src="https://m.media-amazon.com/images/I/710odCXZolL._AC_SX679_.jpg" 
-    alt="Cordless Stick Vacuum" 
-    loading="lazy" 
-    decoding="async"
-  />
-  <div class="product-content">
-    <h2>Lightweight Cordless Vacuum 🧹</h2>
-    <p>Powerful suction and portable design make cleaning floors, carpets, and tight spaces easy.</p>
-    <a href="https://amzn.to/4lXKT7b" class="btn" target="_blank" rel="noopener">See Details</a>
-  </div>
-</div>
-
-      <!-- Product: Portable Power Station -->
-<div class="product">
-  <img 
-    src="https://m.media-amazon.com/images/I/61RlW+QhzgL._AC_SX679_.jpg" 
-    alt="Portable Power Station" 
-    loading="lazy" 
-    decoding="async"
-  />
-  <div class="product-content">
-    <h2>Portable Power Station ⚡</h2>
-    <p>2048Wh LFP battery with 3000W output, compact design, and fast 0–80% recharge in under an hour. Perfect for home backup, camping, and RVs.</p>
-    <a href="https://amzn.to/47SoJQp" class="btn" target="_blank" rel="noopener">See Details</a>
-  </div>
-</div>
-      
-    </div>
-  </div>
-
-  <!-- Footer -->
   <footer>
     <p>As an Amazon Associate, I earn from qualifying purchases. Thank you!</p>
     <p>
       <a href="/about.html">About</a> •
       <a href="/privacy.html">Privacy</a> •
       <a href="/terms.html">Terms</a> •
-      <a href="/contact.html">Contact</a> •
-      <a href="/blog/index.html">Blog</a>
+      <a href="/contact.html">Contact</a>
     </p>
   </footer>
-
-  <!-- Scripts -->
-  <script>
-    // Live search
-    document.getElementById('searchBar').addEventListener('keyup', function() {
-      let query = this.value.toLowerCase();
-      document.querySelectorAll('.product').forEach(product => {
-        let title = product.querySelector('h2').innerText.toLowerCase();
-        let description = product.querySelector('p').innerText.toLowerCase();
-        product.style.display = (title.includes(query) || description.includes(query)) ? "block" : "none";
-      });
-    });
-
-    // Affiliate click tracking
-    document.addEventListener('DOMContentLoaded', () => {
-      document.querySelectorAll('a.btn').forEach(btn => {
-        btn.addEventListener('click', function () {
-          gtag('event', 'affiliate_click', {
-            'event_category': 'Amazon',
-            'event_label': this.href
-          });
-        });
-      });
-    });
-  </script>
 </body>
 </html>
